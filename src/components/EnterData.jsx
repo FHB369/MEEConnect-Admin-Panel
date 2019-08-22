@@ -251,7 +251,7 @@ class EnterData extends Component {
                     <br />
                     <div className="row">
                       <div className="col-md-3">
-                        <div className="input-group">
+                        <div className="input-group mb-2">
                           <select
                             class="custom-select form-control"
                             id="inlineFormCustomSelect"
