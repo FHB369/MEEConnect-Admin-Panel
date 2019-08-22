@@ -23,7 +23,6 @@ class EnterData extends Component {
         name: null,
         nickname: null,
         phone: null,
-        email: null,
         dob: null,
         blood: null,
         msg_id: null,
@@ -70,7 +69,6 @@ class EnterData extends Component {
           name: snap.val().Name,
           nickname: snap.val().Nickname,
           phone: snap.val().Phone,
-          email: snap.val().Email,
           dob: snap.val().DOB,
           blood: snap.val().Blood,
           msg_id: snap.val().MSG_Id,
@@ -114,8 +112,7 @@ class EnterData extends Component {
     peop.name = e.target.name.value;
     peop.nickname = e.target.nickname.value;
     peop.phone = e.target.phone.value;
-    peop.email = e.target.email.value;
-    peop.dob = e.target.dob.value;
+    peop.dob = e.target.date.value + " " + e.target.month.value;
     peop.blood = e.target.blood.value;
     peop.msg_id = e.target.msg_id.value;
     peop.photo = e.target.photo.files[0];
@@ -166,7 +163,6 @@ class EnterData extends Component {
             Name: this.state.addPeople.name,
             Nickname: this.state.addPeople.nickname,
             Phone: this.state.addPeople.phone,
-            Email: this.state.addPeople.email,
             DOB: this.state.addPeople.dob,
             Blood: this.state.addPeople.blood,
             MSG_Id: this.state.addPeople.msg_id,
@@ -255,31 +251,70 @@ class EnterData extends Component {
                     <br />
                     <div className="row">
                       <div className="col-md-3">
-                        <input
-                          type="email"
-                          className="form-control"
-                          placeholder="Email"
-                          name="email"
-                          required
-                        />
-                      </div>
-
-                      <div className="col-md-3">
-                        <div className="input-group mb-3">
-                          <div className="input-group-prepend">
-                            <span
-                              className="input-group-text"
-                              id="basic-addon3"
-                            >
-                              Birthdate
-                            </span>
-                          </div>
-                          <input
-                            type="date"
-                            className="form-control"
-                            name="dob"
+                        <div className="input-group">
+                          <select
+                            class="custom-select form-control"
+                            id="inlineFormCustomSelect"
+                            name="month"
                             required
-                          />
+                          >
+                            <option selected disabled hidden>
+                              Month
+                            </option>
+                            <option value="January">January</option>
+                            <option value="February">February</option>
+                            <option value="March">March</option>
+                            <option value="April">April</option>
+                            <option value="May">May</option>
+                            <option value="June">June</option>
+                            <option value="July">July</option>
+                            <option value="August">August</option>
+                            <option value="September">September</option>
+                            <option value="October">October</option>
+                            <option value="November">November</option>
+                            <option value="December">December</option>
+                          </select>
+                          <select
+                            class="custom-select form-control"
+                            id="inlineFormCustomSelect"
+                            name="date"
+                            required
+                          >
+                            <option selected disabled hidden>
+                              Day
+                            </option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                            <option value="23">23</option>
+                            <option value="24">24</option>
+                            <option value="25">25</option>
+                            <option value="26">26</option>
+                            <option value="27">27</option>
+                            <option value="28">28</option>
+                            <option value="29">29</option>
+                            <option value="30">30</option>
+                            <option value="31">31</option>
+                          </select>
                         </div>
                       </div>
 
@@ -312,10 +347,7 @@ class EnterData extends Component {
                           required
                         />
                       </div>
-                    </div>
-                    <br />
-                    <div className="row">
-                      <div className="col-md-4 offset-md-4">
+                      <div className="col-md-3">
                         <input
                           type="file"
                           accept="image/*"
@@ -354,9 +386,8 @@ class EnterData extends Component {
                     <th scope="col">Name</th>
                     <th scope="col">Nickname</th>
                     <th scope="col">Phone</th>
-                    <th scope="col">Email</th>
                     <th scope="col">Blood</th>
-                    <th scope="col">Birthdate</th>
+                    <th scope="col">Birthday</th>
                     <th scope="col">Messenger</th>
                     <th scope="col">Photo</th>
                     <th scope="col">Action</th>
@@ -369,7 +400,6 @@ class EnterData extends Component {
                       <td>{people.name}</td>
                       <td>{people.nickname}</td>
                       <td>{people.phone}</td>
-                      <td>{people.email}</td>
                       <td>{people.blood}</td>
                       <td>{people.dob}</td>
                       <td>
