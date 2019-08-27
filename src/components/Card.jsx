@@ -26,6 +26,8 @@ class Card extends Component {
             pathname:
               this.state.title === "Teacher"
                 ? "/teacher/data/"
+                : this.state.title === "Staff"
+                ? "/staff/data/"
                 : "/enter/" + this.state.title,
             state: {
               batch: this.state.title
