@@ -5,6 +5,7 @@ import Home from "./components/Home";
 import EnterData from "./components/EnterData";
 import EnterDataTeacher from "./components/EnterDataTeacher";
 import EnterDataStaff from "./components/EnterDataStaff";
+import AddContributor from "./components/AddContributor";
 
 require("firebase/database");
 require("firebase/auth");
@@ -21,6 +22,7 @@ class App extends Component {
         <div>
           <Navbar />
           <Route exact path="/" component={Home} />
+          <Route exact path="/contributor/" component={AddContributor} />
           <Route exact path="/teacher/data/" component={EnterDataTeacher} />
           <Route exact path="/staff/data/" component={EnterDataStaff} />
           <Route path={"/enter/:year"} component={EnterData} />

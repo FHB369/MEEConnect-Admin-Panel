@@ -51,7 +51,7 @@ class Navbar extends Component {
                 alt="Nav-Icon"
               />
               &nbsp;
-              <b>MEE</b>Connect Admin Panel
+              <b>MECHA</b>nnect Admin Panel
             </NavLink>
             {this.state.user ? (
               <div
@@ -73,6 +73,9 @@ class Navbar extends Component {
                   <div className="nav-item nav-link admin-email">
                     {this.state.user.email}
                   </div>
+                  <NavLink className="nav-item nav-link" to="/contributor">
+                    Contributors
+                  </NavLink>
                   <NavLink
                     className="nav-item nav-link"
                     onClick={this.logout}
